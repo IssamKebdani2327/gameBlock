@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    /* margin: 0; */
+}
+
+.splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000000b4;
+    z-index: 1000;
+}
+.splash-screen .start-game {
+    position: absolute;
+    z-index: 1200 ;
+    width: 120px;
+    height: 50px;
+    background-color: blue;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px ;
+    border-radius: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    cursor: pointer;
+}
+.memory-block .container {
+    width: 700px;
+    margin: 0 auto;
+}
+.memory-block .container .info {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #1328c6;
+    padding: 0 50px 0 10px;
+    margin-bottom: 10px;
+}
+.memory-block .container .memory-block-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.memory-block .container .memory-block-content .game-block {
+    cursor: pointer;
+    height: 120px;
+    width: 19%;  
+    position: relative;
+    margin: 0 1% 7px 0;
+    /* pointer-events: ; */
+}
+.memory-block .container .memory-block-content .game-block .back ,  .memory-block .container .memory-block-content .game-block .face{
+    position: absolute;
+    width: 100%;
+    height:100% ;
+    transition: transform 1s;
+    backface-visibility: hidden;
+}
+
+.memory-block .container .memory-block-content .game-block .face::after {
+    content: "?";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 80px;
+    text-align: center;
+    line-height:130px ;
+    background-color: black;  
+    color: white;
+}
+.memory-block .container .memory-block-content .game-block .back {
+    background-color: #1328c6;
+    transform: rotateY(180deg);      
+}
+.memory-block .container .memory-block-content .game-block .back img{
+    width: 100%;
+    height: 100%;
+}
+.memory-block .container .memory-block-content .game-block.is-flip {
+    transform-style: preserve-3d; 
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000000b4;
+}
